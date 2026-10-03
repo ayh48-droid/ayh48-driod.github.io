@@ -1,211 +1,541 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0d1117;
-      color: white;
-    }
+    <title>Adrian Hsu | Management Portfolio</title>
 
-    header {
-      text-align: center;
-      padding: 80px 20px;
-      background-color: #161b22;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    header h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    header p {
-      color: #8b949e;
-      font-size: 20px;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background-color: #f5f7fa;
+        }
 
-    nav {
-      background-color: #21262d;
-      padding: 15px;
-      text-align: center;
-    }
+        /* Navigation */
+        nav {
+            background-color: #8b0000;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    nav a {
-      color: #58a6ff;
-      text-decoration: none;
-      margin: 0 15px;
-    }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+        }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
-    }
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    h2 {
-      color: #58a6ff;
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
+        /* Header */
+        header {
+            background: linear-gradient(rgba(60, 0, 0, 0.85), rgba(60, 0, 0, 0.85)),
+                        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2")
+                        center/cover;
+            color: white;
+            text-align: center;
+            padding: 110px 20px;
+        }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+        header h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
 
-    .project {
-      background-color: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      padding: 25px;
-    }
+        header p {
+            font-size: 21px;
+        }
 
-    .project h3 {
-      margin-top: 0;
-    }
+        /* General Sections */
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 25px;
+        }
 
-    .project p {
-      color: #8b949e;
-    }
+        section h2 {
+            color: #8b0000;
+            font-size: 32px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
 
-    .project a {
-      color: #58a6ff;
-      text-decoration: none;
-    }
+        /* About */
+        #about {
+            background-color: white;
+            max-width: 100%;
+        }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+        .about-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
 
-    .skill {
-      background-color: #21262d;
-      border: 1px solid #30363d;
-      padding: 10px 15px;
-      border-radius: 20px;
-    }
+        .about-content p {
+            margin-bottom: 15px;
+        }
 
-    .contact {
-      text-align: center;
-      background-color: #161b22;
-      border-radius: 10px;
-      padding: 40px;
-    }
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
 
-    .contact a {
-      color: #58a6ff;
-    }
+        .skill {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            font-weight: bold;
+        }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #8b949e;
-      border-top: 1px solid #30363d;
-    }
-  </style>
+        .skill:hover {
+            transform: translateY(-3px);
+            transition: 0.2s;
+        }
+
+        /* Projects */
+        #projects {
+            background-color: #f5f7fa;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .project h3 {
+            color: #8b0000;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .project p {
+            margin-bottom: 15px;
+        }
+
+        .project-type {
+            font-size: 14px;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        /* GitHub */
+        #github {
+            background-color: white;
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .github-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .github-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #8b0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .github-button:hover {
+            background-color: #600000;
+        }
+
+        /* Rubric */
+        #rubric {
+            max-width: 1100px;
+        }
+
+        #rubric table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        #rubric th,
+        #rubric td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        #rubric th {
+            background-color: #8b0000;
+            color: white;
+        }
+
+        #rubric tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+
+        #rubric td:last-child {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            header h1 {
+                font-size: 38px;
+            }
+
+            header p {
+                font-size: 17px;
+            }
+
+            section {
+                padding: 50px 18px;
+            }
+
+            #rubric {
+                overflow-x: auto;
+            }
+
+            #rubric table {
+                min-width: 700px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#github">GitHub</a></li>
+            <li><a href="#rubric">Rubric</a></li>
+        </ul>
+    </nav>
 
-  <header>
-    <h1>Your Name</h1>
-    <p>Student Developer | Programmer | GitHub Enthusiast</p>
-  </header>
+    <!-- Header -->
+    <header>
+        <h1>Adrian Hsu</h1>
+        <p>Rutgers University–New Brunswick | Class of 2028</p>
+        <p>General Management</p>
+    </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hello! My name is Your Name. I am a student interested in
-      programming, web development, and technology. I enjoy creating
-      projects and learning new programming languages and tools.
-    </p>
-  </section>
+    <!-- About Me -->
+    <section id="about">
+        <h2>About Me</h2>
 
-  <section id="projects">
-    <h2>My GitHub Projects</h2>
+        <div class="about-content">
+            <p>
+                I am a Rutgers University–New Brunswick student in the Class of 2028
+                studying General Management with an interest in business strategy,
+                entrepreneurship, and developing ideas that help organizations grow.
+            </p>
 
-    <div class="projects">
+            <p>
+                Through my coursework, I have developed experience analyzing
+                businesses, creating new business concepts, and thinking about
+                how companies can better serve their customers.
+            </p>
+        </div>
+    </section>
 
-      <div class="project">
-        <h3>Project One</h3>
-        <p>
-          A web development project that demonstrates my HTML and CSS skills.
-        </p>
-        <a href="https://github.com/YOUR-USERNAME">
-          View on GitHub →
-        </a>
-      </div>
+    <!-- Skills -->
+    <section id="skills">
+        <h2>Skills</h2>
 
-      <div class="project">
-        <h3>Project Two</h3>
-        <p>
-          A programming project created to practice problem solving and coding.
-        </p>
-        <a href="https://github.com/YOUR-USERNAME">
-          View on GitHub →
-        </a>
-      </div>
+        <div class="skills-container">
 
-      <div class="project">
-        <h3>Project Three</h3>
-        <p>
-          An additional project showing my interest in software development.
-        </p>
-        <a href="https://github.com/YOUR-USERNAME">
-          View on GitHub →
-        </a>
-      </div>
+            <div class="skill">
+                Business Strategy
+            </div>
 
-    </div>
-  </section>
+            <div class="skill">
+                Marketing
+            </div>
 
-  <section id="skills">
-    <h2>Skills</h2>
+            <div class="skill">
+                Management
+            </div>
 
-    <div class="skills">
-      <span class="skill">HTML</span>
-      <span class="skill">CSS</span>
-      <span class="skill">JavaScript</span>
-      <span class="skill">Python</span>
-      <span class="skill">Git</span>
-      <span class="skill">GitHub</span>
-    </div>
-  </section>
+            <div class="skill">
+                Entrepreneurship
+            </div>
 
-  <section id="contact">
-    <div class="contact">
-      <h2>Contact Me</h2>
-      <p>
-        You can find my projects and code on GitHub.
-      </p>
+            <div class="skill">
+                Business Analysis
+            </div>
 
-      <a href="https://github.com/YOUR-USERNAME">
-        Visit My GitHub
-      </a>
-    </div>
-  </section>
+            <div class="skill">
+                Creative Problem Solving
+            </div>
 
-  <footer>
-    <p>© 2026 Your Name | GitHub Portfolio</p>
-  </footer>
+            <div class="skill">
+                Team Collaboration
+            </div>
+
+            <div class="skill">
+                Presentation Skills
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="projects-container">
+
+            <!-- Project 1 -->
+            <div class="project">
+
+                <div class="project-type">
+                    INTRODUCTION TO MARKETING
+                </div>
+
+                <h3>Hidden Grounds Coffee – Marketing Growth Strategy</h3>
+
+                <p>
+                    For my Introduction to Marketing final project, my team
+                    selected Hidden Grounds Coffee as a real-world company to
+                    analyze and develop new ideas that could help the business
+                    grow.
+                </p>
+
+                <p>
+                    We proposed several opportunities for the company, including
+                    bottled coffees that customers could purchase and take with
+                    them, seasonal bakery items that could create additional
+                    customer interest, and student discounts designed to attract
+                    more college students.
+                </p>
+
+                <p>
+                    This project allowed me to apply marketing concepts to a real
+                    company while thinking about customer needs, product
+                    development, and potential growth opportunities.
+                </p>
+
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+
+                <div class="project-type">
+                    INTRODUCTION TO MANAGEMENT
+                </div>
+
+                <h3>Rutgers Late-Night Food Truck</h3>
+
+                <p>
+                    For my Introduction to Management final project, my team
+                    created a fictional business and developed a plan for how the
+                    company would operate.
+                </p>
+
+                <p>
+                    We created a Rutgers-focused food truck designed to operate
+                    late at night and provide students with convenient food
+                    options when many other businesses are closed.
+                </p>
+
+                <p>
+                    The business would also offer catering services for fraternity
+                    and sorority events by allowing organizations to rent the
+                    food truck for their events.
+                </p>
+
+                <p>
+                    This project gave me experience thinking about business
+                    operations, target customers, services, and ways a company
+                    could generate revenue.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GitHub Setup -->
+    <section id="github">
+        <h2>GitHub Setup &amp; Deployment</h2>
+
+        <div class="github-content">
+
+            <p>
+                This portfolio is hosted using GitHub Pages. The repository is
+                intended to be public and accessible online.
+            </p>
+
+            <!-- Replace the # below with your actual GitHub profile/repository link -->
+            <a
+                class="github-button"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                View My GitHub
+            </a>
+
+            <p style="margin-top: 20px;">
+                <strong>GitHub Repository:</strong>
+                Replace this text with your repository link.
+            </p>
+
+            <p>
+                <strong>GitHub Pages:</strong>
+                Replace this text with your live website link.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Grading Rubric -->
+    <section id="rubric">
+
+        <h2>Portfolio Grading Rubric</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Description</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>GitHub Setup &amp; Deployment</td>
+
+                    <td>
+                        Followed the steps from "Github Setup.mov" correctly;
+                        repository is public and the site is live and accessible
+                        via GitHub Pages.
+                    </td>
+
+                    <td>3 points</td>
+                </tr>
+
+                <tr>
+                    <td>Personal Statement</td>
+
+                    <td>
+                        Features a clear, concise, and professional one-sentence
+                        introduction ("who you are in one sentence").
+                    </td>
+
+                    <td>2 points</td>
+                </tr>
+
+                <tr>
+                    <td>Skills Showcase</td>
+
+                    <td>
+                        Clearly displays a relevant set of skills tailored for
+                        potential employers in an organized format.
+                    </td>
+
+                    <td>2 points</td>
+                </tr>
+
+                <tr>
+                    <td>Projects Section</td>
+
+                    <td>
+                        Includes at least 2–3 relevant projects with descriptive
+                        summaries and working links/references.
+                    </td>
+
+                    <td>2 points</td>
+                </tr>
+
+                <tr>
+                    <td>Design &amp; Usability</td>
+
+                    <td>
+                        The website is clean, easy to navigate, visually appealing,
+                        and free of broken links.
+                    </td>
+
+                    <td>1 point</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Adrian Hsu. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
+```
+
+ 
+
+    
